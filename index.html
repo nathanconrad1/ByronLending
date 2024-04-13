@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Byron Private Lending</title>
+  <title>Utah Private Funding, LLC</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -45,7 +45,7 @@
     <div class="container d-flex align-items-center justify-content-between">
 
       <div class="logo">
-        <h1><a href="index.html">B Dawg Lending</a></h1>
+        <h1><a href="index.html">Utah Private Funcing, LLC</a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
@@ -91,23 +91,23 @@
       <!-- Slide 1 -->
       <div class="carousel-item active">
         <div class="carousel-container">
-          <h2 class="animate__animated animate__fadeInDown">Welcome to <span>Byron Conrad's Private Lending</span></h2>
-          <p class="animate__animated fanimate__adeInUp">All the Lending that I do for you is super leagal I promise.  Give me your money you silly monkey.</p>
+          <h2 class="animate__animated animate__fadeInDown">Welcome to <span>Utah Private Funding, LLC</span></h2>
+          <p class="animate__animated fanimate__adeInUp">Private Lending for Commercial Loans</p>
           <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
         </div>
       </div>
 
       <!-- Slide 2 -->
-      <div class="carousel-item">
+      <!-- <div class="carousel-item">
         <div class="carousel-container">
           <h2 class="animate__animated animate__fadeInDown">Slide 2</h2>
           <p class="animate__animated animate__fadeInUp">MONEY $$$$$$$$$$$$$$$$$$</p>
           <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
         </div>
-      </div>
+      </div> -->
 
       <!-- Slide 3 -->
-      <div class="carousel-item">
+      <!-- <div class="carousel-item">
         <div class="carousel-container">
           <h2 class="animate__animated animate__fadeInDown">Slide 3</h2>
           <p class="animate__animated animate__fadeInUp">Uncle Byron is very trustworthy with your money</p>
@@ -121,7 +121,7 @@
 
       <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
         <span class="carousel-control-next-icon bx bx-chevron-right" aria-hidden="true"></span>
-      </a>
+      </a> -->
 
     </div>
 
@@ -898,20 +898,33 @@
               </div>
 
               <div class="form-group mt-3">
-                <input type="text" class="form-control" name="Collateral" id="Collateral" placeholder="Collateral Type (house, lot, land, commercial building, etc.):" required>
-              </div>
-
-              <div class="form-group mt-3">
-                <input type="text" class="form-control" name="amount" id="amount" placeholder="Loan Amount Requested:" required>
-              </div>
-
-              <div class="form-group mt-3">
                 <input type="text" class="form-control" name="location" id="location" placeholder="Collateral Address or Location:" required>
               </div>
 
               <div class="form-group mt-3">
-                <input type="text" class="form-control" name="type" id="type" placeholder="Specify if Refinance or Purchase:" required>
+                <input type="text" class="form-control" name="Collateral" id="Collateral" placeholder="Collateral Type (house, lot, land, commercial building, etc.):" required>
               </div>
+
+              <div class="form-group mt-3">
+                <input type="number" class="form-control" name="amount" id="amount" placeholder="Loan Amount Requested:" required>
+              </div>
+
+<!-- 
+              <select>
+                <option data-display="Select">Nothing</option>
+                <option value="1">Some option</option>
+                <option value="2">Another option</option>
+                <option value="3" disabled>A disabled option</option>
+                <option value="4">Potato</option>
+              </select> -->
+
+              <div style="padding-bottom: 40px;" class="form-group mt-3">
+                <select  class="form-control"  name="type" id="type" placeholder="Specify if Refinance or Purchase:" required>
+                  <option disabled selected value class="form-control" >Specify if Refinance or Purchase:         </option>
+                  <option class="form-control">Refinance</option> <option class="form-control">Purchase</option>
+                </select> 
+              </div>
+                <br>
 
               <div class="form-group mt-3">
                 <input type="text" class="form-control" name="purchase" id="purchase" placeholder="If Purchase, Purchase Price:" required>
@@ -933,8 +946,14 @@
                 <input type="text" class="form-control" name="calcValue" id="calcValue" placeholder="Estimated After Repair Value:" required>
               </div>
 
-              <div class="form-group mt-3">
+              <!-- <div class="form-group mt-3">
                 <input type="text" class="form-control" name="occupied" id="occupied" placeholder="Is Property Currently Occupied: (Y/N)" required>
+              </div> -->
+              <div  class="form-group mt-3">
+                <select  class="form-control"  name="occupied" id="occupied"  required>
+                  <option disabled selected value class="form-control" >Is Property Currently Occupied:        </option>
+                  <option class="form-control">Yes</option> <option class="form-control">No</option>
+                </select> 
               </div>
 
               <div class="form-group mt-3">
@@ -965,6 +984,12 @@
 
       </div>
     </section><!-- End Contact Section -->
+
+    <script>
+      if (document.getElementById("type") == "> Specify if Refinance or Purchase:") {
+      document.getElementById("type").style.color = "grey";
+      }
+    </script>
 
   </main><!-- End #main -->
 
