@@ -1614,7 +1614,7 @@ section {
 .nice-select {
   -webkit-tap-highlight-color: transparent;
   background-color: #fff;
-  border-radius: 5px;
+  border-radius: 0px;
   border: solid 1px #e8e8e8;
   box-sizing: border-box;
   clear: both;
@@ -1629,7 +1629,7 @@ section {
   outline: none;
   padding-left: 18px;
   padding-right: 30px;
-  padding-bottom: 10px;
+  padding-bottom: 30px;
   position: relative;
   text-align: left !important;
   -webkit-transition: all 0.2s ease-in-out;
@@ -1776,4 +1776,9 @@ section {
 
 .no-csspointerevents .nice-select.open .list {
   display: block;
+}
+
+/* Gray color for disabled option */
+#type option:disabled {
+  color: gray;
 }

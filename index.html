@@ -888,6 +888,33 @@
           </div>
 
 
+          <script>
+function toggleInputs() {
+    var typeSelect = document.getElementById("type");
+    var purchaseInput = document.getElementById("purchaseInput");
+    var refinanceInput = document.getElementById("refinanceInput");
+
+    if (typeSelect.value === "Refinance") {
+        purchaseInput.style.display = "none";
+        refinanceInput.style.display = "block";
+        purchaseInput.required = false; 
+        refinanceInput.required = true;
+    } else if (typeSelect.value === "Purchase") {
+        purchaseInput.style.display = "block";
+        refinanceInput.style.display = "none";
+        purchaseInput.required = true; 
+        refinanceInput.required = false;
+    } else {
+        purchaseInput.style.display = "none";
+        refinanceInput.style.display = "none";
+        purchaseInput.required = false;
+        refinanceInput.required = false;
+    }
+}
+
+
+          </script>
+
 
           
 
@@ -925,21 +952,23 @@
                 <option value="4">Potato</option>
               </select> -->
 
-              <div style="padding-bottom: 40px;" class="form-group mt-3">
-                <select  class="form-control"  name="type" id="type" placeholder="Specify if Refinance or Purchase:" required>
-                  <option disabled selected value class="form-control" >Specify if Refinance or Purchase:         </option>
-                  <option class="form-control">Refinance</option> <option class="form-control">Purchase</option>
-                </select> 
-              </div>
-                <br>
-
-              <div class="form-group mt-3">
-                <input type="text" class="form-control" name="purchase" id="purchase" placeholder="If Purchase, Purchase Price:" required>
-              </div>
-
-              <div class="form-group mt-3">
-                <input type="text" class="form-control" name="refinance" id="refinance" placeholder="If Refinance, Existing Lien Amount:" required>
-              </div>
+              <div style="padding-bottom: 30px;" class="form-group mt-3">
+                <select class="form-control" name="type" id="type" onchange="toggleInputs()" required>
+                    <option disabled selected value="default">Specify if Refinance or Purchase:</option>
+                    <option value="Refinance">Refinance</option>
+                    <option value="Purchase">Purchase</option>
+                </select>
+            </div>
+            <br>
+            
+            <div class="form-group mt-3" id="purchaseInput" style="display: none;">
+                <input type="text" class="form-control" name="purchase" id="purchase" placeholder="If Purchase, Purchase Price:">
+            </div>
+            
+            <div class="form-group mt-3" id="refinanceInput" style="display: none;">
+                <input type="text" class="form-control" name="refinance" id="refinance" placeholder="If Refinance, Existing Lien Amount:">
+            </div>
+            
 
               <div class="form-group mt-3">
                 <input type="text" class="form-control" name="value" id="value" placeholder="Current Estimated Value:" required>
@@ -956,12 +985,13 @@
               <!-- <div class="form-group mt-3">
                 <input type="text" class="form-control" name="occupied" id="occupied" placeholder="Is Property Currently Occupied: (Y/N)" required>
               </div> -->
-              <div  class="form-group mt-3">
+              <div  class="form-group mt-3" style="padding-bottom: 30px;">
                 <select  class="form-control"  name="occupied" id="occupied"  required>
                   <option disabled selected value class="form-control" >Is Property Currently Occupied:        </option>
                   <option class="form-control">Yes</option> <option class="form-control">No</option>
                 </select> 
               </div>
+              <br>
 
               <div class="form-group mt-3">
                 <input type="text" class="form-control" name="rental" id="rental" placeholder="If Rental, Rent Amount(s):" required>
